@@ -12,7 +12,7 @@ def create_tables():
     cursor.execute("""CREATE TABLE IF NOT EXISTS exercises (
                    id INTEGER PRIMARY KEY AUTOINCREMENT,
                    name TEXT NOT NULL,
-                   detail TEXT,
+                   details TEXT,
                    category_id INTEGER,
                    FOREIGN KEY (category_id) REFERENCES categories(id))""")
 
