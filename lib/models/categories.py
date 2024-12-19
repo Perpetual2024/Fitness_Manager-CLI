@@ -1,6 +1,7 @@
 
 import sqlite3
 
+from database.connection import get_db_connection
 
 class Categories:
     all = {}#this is a dict that will hold all the categories by there (id)
@@ -23,3 +24,27 @@ class Categories:
             self._name = new_name
         else:
             raise ValueError("Name cannot be empty")
+        
+    def save(self):
+        conn = get_db_connection()
+        cursor = conn.cursor()
+        sql = """
+                INSERT INTO categories (name) 
+                VALUES (?)
+"""
+
+        cursor.execute(sql, (self.name,)) 
+        conn.commit()
+        self.id = cursor.lastrowid
+        type(self).all[self.id] = self
+        conn.close()
+
+    @classmethod
+    def create(cls, name):
+        category = cls(name)
+        category.save()
+        return category
+    
+    def get_category_id(self):
+        return self.id
+
