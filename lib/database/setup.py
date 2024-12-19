@@ -1,15 +1,14 @@
-import sqlite3
+from .connection import get_db_connection
 
-def get_connection():
-    conn = sqlite3.connect('fitness_manager.db')
-    return conn
+
 
 def create_tables():
-    conn = get_connection()
+    conn = get_db_connection()
     cursor = conn.cursor()
     cursor.execute("""CREATE TABLE IF NOT EXISTS categories (
                    id INTEGER PRIMARY KEY AUTOINCREMENT,
                    name TEXT NOT NULL)""")
+    
     cursor.execute("""CREATE TABLE IF NOT EXISTS exercises (
                    id INTEGER PRIMARY KEY AUTOINCREMENT,
                    name TEXT NOT NULL,
@@ -19,4 +18,3 @@ def create_tables():
 
     conn.commit()
     conn.close()
-
