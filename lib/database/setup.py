@@ -1,9 +1,8 @@
-from .connection import get_db_connection
-
+import sqlite3
 
 
 def create_tables():
-    conn = get_db_connection()
+    conn = sqlite3.connect("fitness_manager.db")
     cursor = conn.cursor()
     cursor.execute("""CREATE TABLE IF NOT EXISTS categories (
                    id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -18,3 +17,7 @@ def create_tables():
 
     conn.commit()
     conn.close()
+    print("Database setup complete")
+
+if  __name__ == "__main__" : 
+    create_tables()  # Call the function to create the tables

@@ -1,8 +1,7 @@
 import sqlite3
 
-DATABASE_NAME = './database/fitness_manager.db'
 
 def get_db_connection():
-    conn = sqlite3.connect(DATABASE_NAME)
+    conn = sqlite3.connect("fitness_manager.db")
     conn.row_factory = sqlite3.Row
     return conn
