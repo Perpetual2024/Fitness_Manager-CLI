@@ -21,11 +21,15 @@ Take a look at the directory structure:
 ├── README.md
 └── lib
     ├── models
-    │   ├── __init__.py
-    │   └── model_1.py
+    │   └── categories.py
+        ├── __init__.py
+        └── exercises.py
+    └── database
+    │   ├── __connection.py
+    │   └── setup.py
     ├── cli.py
     ├── debug.py
-    └── helpers.py
+    └── fitness_manager.db
 ```
 
 Note: The directory also includes two files named `CONTRIBUTING.md` and

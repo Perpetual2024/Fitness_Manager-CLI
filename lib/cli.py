@@ -1,6 +1,6 @@
 # lib/cli.py
 from models.categories import Categories
-from models.exercices import Exercises
+from models.exercises import Exercises
 from database.connection import get_db_connection
 
 
