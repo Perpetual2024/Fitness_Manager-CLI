@@ -84,7 +84,7 @@ On the CLI, you will be presented with a menu to choose from the following optio
     │   └── exercise.py             # Defines exercises (user management functionality)
     │
     ├── cli.app                     # CLI logic for interacting with the app
-    ├── debug.py                    # SQLite database file (if applicable, can be renamed to database.py)
+    ├── debug.py                    # (optional)You can use to test you models
     ├──fitness_manager.db           # You can view your cli inputs on this SQLite database file
     ├── Pipfile                     # Dependencies and virtual environment setup
     ├── Pipfile.lock                # Dependency lock file  
